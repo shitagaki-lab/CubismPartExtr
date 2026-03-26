@@ -1,0 +1,12 @@
+{
+  "dependencies": [
+    "fmt",
+    "glfw3",
+    "glew",
+    "glm",
+    "yaml-cpp",
+    "opencv",
+    "egl-registry"
+    
+  ]
+}

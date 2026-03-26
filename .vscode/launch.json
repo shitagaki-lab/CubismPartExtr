@@ -1,0 +1,64 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(lldb) Launch cmake",
+            "type": "lldb",
+            "request": "launch",
+            // Resolved by CMake Tools:
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "cwd": "${command:cmake.launchTargetDirectory}",
+        },
+        {
+            "name": "(lldb) part extract",
+            "type": "lldb",
+            "request": "launch",
+            // Resolved by CMake Tools:
+            "program": "${command:cmake.launchTargetPath}",
+            "args": ["../../../configs/test.yaml"],
+            "cwd": "${command:cmake.launchTargetDirectory}",
+        },
+        {
+            "name": "(lldb) xvfb part extract",
+            "type": "lldb",
+            "request": "launch",
+            // "runtimeExecutable": "xvfb-run",
+            // Resolved by CMake Tools:
+            "program": "${command:cmake.launchTargetPath}",
+            "args": ["../../../configs/test.yaml"],
+            "cwd": "${command:cmake.launchTargetDirectory}",
+            "env": {
+                "DISPLAY": ":99"
+            }
+        }
+        // {
+        //     "name": "(gdb) Launch cmake",
+        //     "type": "cppdbg",
+        //     "request": "launch",
+        //     // Resolved by CMake Tools:
+        //     "program": "${command:cmake.launchTargetPath}",
+        //     "args": [],
+        //     "stopAtEntry": false,
+        //     // "cwd": "${command:cmake.launchTargetDirectory}",
+        //     "environment": [
+        //         {
+        //             "name": "PATH",
+        //             "value": "${env:PATH}:${command:cmake.getLaunchTargetDirectory}"
+        //             },            {
+        //                 "name": "OTHER_VALUE",
+        //                 "value": "Something something"
+        //             }
+        //     ],
+        //     "MIMode": "gdb",
+        //     // "externalConsole": true,
+        //     "setupCommands": [
+        //         {
+        //             "description": "Enable pretty-printing for gdb",
+        //             "text": "-enable-pretty-printing",
+        //             "ignoreFailures": false
+        //         }
+        //     ]
+        // }
+    ]
+}

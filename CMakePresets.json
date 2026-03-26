@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "configurePresets": [
+    {
+      "name": "base",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "1",
+        "TARGET_PROJ": "${presetName}"
+      },
+      "environment": {
+        "VCPKG_ROOT": "/mnt/nvme1/packages/vcpkg_root"
+      },
+      "binaryDir": "build"
+    },
+    {
+      "name": "minimum",
+      "inherits": "base",
+      "cacheVariables": {"CSM_MINIMUM_DEMO": true}
+    },
+    {
+      "name": "part_extract",
+      "cacheVariables": {"CSM_PART_EXTRACT": true, "CSM_MINIMUM_DEMO": true},
+      "inherits": "base"
+    },
+    {
+      "name": "part_extract_release",
+      "cacheVariables": {"CSM_PART_EXTRACT": true, "CSM_MINIMUM_DEMO": true, "CMAKE_BUILD_TYPE": "Release"},
+      "inherits": "base"
+    },
+    {
+      "name": "full",
+      "inherits": "base"
+    }
+  ]
+}

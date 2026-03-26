@@ -1,0 +1,7 @@
+# source directory contain live2d models
+root_dir: Resources
+
+# target saving directory
+save_dir: partextr_output
+
+save_ext: .png
