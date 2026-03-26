@@ -1,5 +1,6 @@
 Samples
 Core
+*.zip
 
 # Core
 Samples/D3D11/thirdParty/DirectXTK
