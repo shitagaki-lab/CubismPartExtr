@@ -65,3 +65,9 @@ In the CMake extension panel, set `Configure` to `part_extract` and set the debu
 
 
 For headless env, run xvfb in the background and set the debug option to `(lldb) xvfb part extract`
+
+
+## LICENSE
+The codebase is primarily built upon https://github.com/Live2D/CubismNativeSamples
+
+[LICENSE](LICENSE.md)
