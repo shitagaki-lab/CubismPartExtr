@@ -60,6 +60,7 @@ csmByte* LAppPal::LoadFileAsBytes(const string filePath, csmSizeInt* outSize)
     {
         if (DebugLogEnable)
         {
+            throw std::runtime_error("Failed to load " + filePath);
             PrintLogLn("Stat failed. errno:%d path:%s", errno, path);
         }
         return NULL;

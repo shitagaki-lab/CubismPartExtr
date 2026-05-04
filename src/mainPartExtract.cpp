@@ -415,9 +415,9 @@ int processModel(const YAML::Node& config, const std::filesystem::path& root_dir
     catch (const std::exception& e) {
         std::cerr << "failed to process model: " << root_dir / src_name << std::endl;
         std::cout << "Caught " << e.what() << std::endl;
-#ifndef RELEASE_VERSION
-        throw e;
-#endif
+// #ifndef RELEASE_VERSION
+//         throw e;
+// #endif
         return -1;
     }
 
